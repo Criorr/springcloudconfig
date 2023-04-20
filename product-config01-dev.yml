@@ -1,0 +1,12 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: product
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        service-name: ${spring.application.name}
+        register-health-check: true
+        health-check-path: /actuator/health
