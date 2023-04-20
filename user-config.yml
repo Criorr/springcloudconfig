@@ -1,0 +1,15 @@
+server:
+  port: 7777
+spring:
+  application:
+    name: user7777
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        service-name: ${spring.application.name}
+        register-health-check: true
+        health-check-path: /actuator/health
+feign:
+  circuitbreaker:
+    enabled: true
